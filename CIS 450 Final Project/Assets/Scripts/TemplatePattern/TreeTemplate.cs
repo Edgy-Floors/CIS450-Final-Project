@@ -7,11 +7,18 @@ public abstract class TreeTemplate : MonoBehaviour
     [SerializeField] protected float absorbtionRange;
     [SerializeField] protected float absorbtionSpeed;
 
-    protected void Update()
+    protected GameStateTracker gameStateTracker;
+
+    protected IEnumerator Absorb()
     {
-        if (CheckForCo2())
+        while (true)
         {
-            AbsorbCo2();
+            if (CheckForCo2())
+            {
+                AbsorbCo2();
+            }
+
+            yield return new WaitForSeconds(absorbtionSpeed);
         }
     }
 
