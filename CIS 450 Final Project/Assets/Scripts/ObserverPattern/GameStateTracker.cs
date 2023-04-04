@@ -49,6 +49,11 @@ public class GameStateTracker : ISubject
 
         currentTemp += netDifference * tempChangeRate * Time.deltaTime;
 
+        if (currentTemp < 0)
+        {
+            currentTemp = 0;
+        }
+
         NotifyObservers();
     }
 
