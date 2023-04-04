@@ -18,13 +18,13 @@ public class GameEndMessage : IObserver
         {
             Time.timeScale = 0;
 
-            gameWinUI.SetActive(true);
+            gameLossUI.SetActive(true);
         }
         else if (currentTemp == 0)
         {
             Time.timeScale = 0;
 
-            gameLossUI.SetActive(true);
+            gameWinUI.SetActive(true);
         }
     }
 }
