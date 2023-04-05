@@ -93,3 +93,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   absorbtionRange: 3
   absorbtionSpeed: 1.5
+  validTargets: []
