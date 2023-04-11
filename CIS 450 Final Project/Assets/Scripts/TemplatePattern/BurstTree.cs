@@ -6,9 +6,12 @@ public class BurstTree : TreeTemplate
 {
     List<GameObject> validTargets = new List<GameObject>();
     CircleCollider2D attackRange;
+    ObjectPooler objectPooler;
 
     private void Awake()
     {
+        objectPooler = ObjectPooler.uniqueInstance;
+
         attackRange = GetComponent<CircleCollider2D>();
         attackRange.radius = absorbtionRange;
 
@@ -26,7 +29,7 @@ public class BurstTree : TreeTemplate
         {
             tempCo2 = validTargets[0];
             gameStateTracker.UpdateCo2Count(-1);
-            Destroy(tempCo2);
+            objectPooler.ReturnObjectToPool("Enemy", tempCo2);
         }
     }
 
