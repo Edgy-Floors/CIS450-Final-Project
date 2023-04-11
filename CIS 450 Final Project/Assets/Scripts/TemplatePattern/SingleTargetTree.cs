@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SingleTargetTree : TreeTemplate
 {
-    List<GameObject> validTargets = new List<GameObject>();
+    [SerializeField]List<GameObject> validTargets = new List<GameObject>();
     CircleCollider2D attackRange;
     ObjectPooler objectPooler;
 
@@ -37,6 +37,7 @@ public class SingleTargetTree : TreeTemplate
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("AAAAAAAAA");
             validTargets.Add(collision.gameObject);
         }
     }
