@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject bruh;
+    public GameObject pauseMenuCanvas;
 
-    public Transform spawnPos;
+    public PauseMenu pauseMenuScript;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Escape)) 
         {
-            Instantiate(bruh, spawnPos.transform);
+            pauseMenuCanvas.SetActive(true);
+            pauseMenuScript.PauseGame();
         }
     }
 }
