@@ -18,7 +18,7 @@ public class DefaultEmission : MonoBehaviour, Emission
     private void Awake()
     {
         gst = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateTracker>();
-        gst.UpdateCo2Count(1);
+        //gst.UpdateCo2Count(1);
     }
 
     public void move(float speed)
@@ -29,5 +29,15 @@ public class DefaultEmission : MonoBehaviour, Emission
     private void Update()
     {
 
+    }
+
+    private void OnEnable()
+    {
+        gst.UpdateCo2Count(1);
+    }
+
+    private void OnDisable()
+    {
+        gst.UpdateCo2Count(-1);
     }
 }
