@@ -91,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234add74e8991c8498da87f8ed23acd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 3
   absorbtionRange: 3
   absorbtionSpeed: 1.5
+  resourceGain: 3
   validTargets: []

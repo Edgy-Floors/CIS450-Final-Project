@@ -18,6 +18,8 @@ public class SingleTargetTree : TreeTemplate
         gameStateTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateTracker>();
         gameStateTracker.UpdateTreeCount(1);
 
+        resourceTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceTracker>();
+
         StartCoroutine(Absorb());
     }
 
@@ -37,7 +39,7 @@ public class SingleTargetTree : TreeTemplate
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("AAAAAAAAA");
+            //Debug.Log("AAAAAAAAA");
             validTargets.Add(collision.gameObject);
         }
     }

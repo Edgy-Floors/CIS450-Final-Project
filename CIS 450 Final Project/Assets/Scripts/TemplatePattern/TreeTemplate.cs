@@ -4,10 +4,13 @@ using UnityEngine;
 
 public abstract class TreeTemplate : MonoBehaviour
 {
+    [SerializeField] protected int cost;
     [SerializeField] protected float absorbtionRange;
     [SerializeField] protected float absorbtionSpeed;
+    [SerializeField] protected int resourceGain;
 
     protected GameStateTracker gameStateTracker;
+    protected ResourceTracker resourceTracker;
 
     protected IEnumerator Absorb()
     {
@@ -15,6 +18,7 @@ public abstract class TreeTemplate : MonoBehaviour
         {
             if (CheckForCo2())
             {
+                resourceTracker.GainResources(resourceGain);
                 AbsorbCo2();
             }
 
@@ -25,4 +29,9 @@ public abstract class TreeTemplate : MonoBehaviour
     protected abstract bool CheckForCo2();
 
     protected abstract void AbsorbCo2();
+
+    public int GetCost()
+    {
+        return cost;
+    }
 }
