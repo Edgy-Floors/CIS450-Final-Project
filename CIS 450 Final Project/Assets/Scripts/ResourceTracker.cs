@@ -5,28 +5,33 @@ using TMPro;
 
 public class ResourceTracker : MonoBehaviour
 {
-    int resourceCount = 0;
+    int resourceCount = 5;
 
     [SerializeField] TextMeshProUGUI resourceText;
+    [SerializeField] TreeSpawner treeSpawner;
+
+    private void Awake()
+    {
+        treeSpawner.UpdateButtonAvailability(resourceCount);
+
+        resourceText.text = "Volunteers:\n" + resourceCount;
+    }
 
     public void GainResources(int amount)
     {
         resourceCount += amount;
 
-        resourceText.text = "Volunteers: " + resourceText;
+        resourceText.text = "Volunteers:\n" + resourceCount;
 
-        //UpdateTreeSpawner();
-    }
-
-    public void UpdateTreeSpawner()
-    {
-        //return resourceCount;
+        treeSpawner.UpdateButtonAvailability(resourceCount);
     }
 
     public void SpendResources(int amount)
     {
         resourceCount -= amount;
 
-        resourceText.text = "Volunteers: " + resourceText;
+        resourceText.text = "Volunteers:\n" + resourceCount;
+
+        treeSpawner.UpdateButtonAvailability(resourceCount);
     }
 }

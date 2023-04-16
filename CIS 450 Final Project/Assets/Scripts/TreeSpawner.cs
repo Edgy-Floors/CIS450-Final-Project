@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreeSpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> treePrefabs;
+    [SerializeField] List<Button> buttonList;
     [SerializeField] Vector2 xPosBounds;
     [SerializeField] Vector2 yPosBounds;
+    [SerializeField] ResourceTracker resourceTracker;
 
     bool hasClickedOnce = false;
     int currentIndex = -1;
@@ -28,6 +31,23 @@ public class TreeSpawner : MonoBehaviour
             {
                 hasClickedOnce = false;
                 Instantiate(treePrefabs[currentIndex], mousePos, Quaternion.identity);
+                int cost = treePrefabs[currentIndex].GetComponent<TreeTemplate>().GetCost();
+                resourceTracker.SpendResources(cost);
+            }
+        }
+    }
+
+    public void UpdateButtonAvailability(int currentResources)
+    {
+        for (int i = 0; i < buttonList.Count && i < treePrefabs.Count; ++i)
+        {
+            if (treePrefabs[i].GetComponent<TreeTemplate>().GetCost() > currentResources)
+            {
+                buttonList[i].interactable = false;
+            }
+            else
+            {
+                buttonList[i].interactable = true;
             }
         }
     }
