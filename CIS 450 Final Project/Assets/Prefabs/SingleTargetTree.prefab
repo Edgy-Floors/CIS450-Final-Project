@@ -95,4 +95,5 @@ MonoBehaviour:
   absorbtionRange: 3
   absorbtionSpeed: 1.5
   resourceGain: 3
-  validTargets: []
+  validTargets:
+  - {fileID: 3308445694187831530, guid: 0f84419b5cbf78147a99d24b541c63d5, type: 3}
