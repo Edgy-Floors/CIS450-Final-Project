@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface Emission
 {
-    void move(float speed);
+    void move();
 }
