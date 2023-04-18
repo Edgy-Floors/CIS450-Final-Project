@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 5
-  absorbtionRange: 1
+  absorbtionRange: 2
   absorbtionSpeed: 2
-  resourceGain: 2
+  resourceGain: 3
 --- !u!58 &6829626524243146599
 CircleCollider2D:
   m_ObjectHideFlags: 0

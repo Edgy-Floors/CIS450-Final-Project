@@ -18,6 +18,8 @@ public class BurstTree : TreeTemplate
         gameStateTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateTracker>();
         gameStateTracker.UpdateTreeCount(1);
 
+        resourceTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceTracker>();
+
         StartCoroutine(Absorb());
     }
 
@@ -25,17 +27,20 @@ public class BurstTree : TreeTemplate
     {
         GameObject tempCo2;
 
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < validTargets.Count && i < 3; ++i)
         {
-            tempCo2 = validTargets[0];
-            //gameStateTracker.UpdateCo2Count(-1);
-            objectPooler.ReturnObjectToPool("Enemy", tempCo2);
+            if (validTargets.Count != 0)
+            {
+                tempCo2 = validTargets[0];
+                //gameStateTracker.UpdateCo2Count(-1);
+                objectPooler.ReturnObjectToPool("Enemy", tempCo2);
+            }
         }
     }
 
     protected override bool CheckForCo2()
     {
-        return validTargets.Count >= 3;
+        return validTargets.Count >= 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,7 +55,15 @@ public class BurstTree : TreeTemplate
     {
         if (collision.gameObject.CompareTag("Enemy") && validTargets.Contains(collision.gameObject))
         {
-            validTargets.Remove(collision.gameObject);
+            //validTargets.Remove(collision.gameObject);
+            StartCoroutine(DelayedLeaveTrigger(collision.gameObject));
         }
+    }
+
+    IEnumerator DelayedLeaveTrigger(GameObject co2)
+    {
+        yield return new WaitForSeconds(1f);
+
+        validTargets.Remove(co2);
     }
 }
