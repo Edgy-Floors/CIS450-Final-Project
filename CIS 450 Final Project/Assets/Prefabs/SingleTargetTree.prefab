@@ -95,4 +95,5 @@ MonoBehaviour:
   absorbtionRange: 4
   absorbtionSpeed: 4
   resourceGain: 1
+  description: Has average range and absorbtion speed.
   validTargets: []
