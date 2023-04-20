@@ -862,7 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateTracker: {fileID: 1402733926}
-  spawnTimer: 2
+  spawnTimer: 1.5
   spawnPos: {x: 0.69, y: 5.79}
 --- !u!114 &847305190
 MonoBehaviour:
