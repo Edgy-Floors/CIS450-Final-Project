@@ -13,7 +13,7 @@ public class CO2Spawner : MonoBehaviour
     {
         objectPooler = ObjectPooler.uniqueInstance;
 
-        StartSpawning();
+        //StartSpawning();
     }
 
     public void StartSpawning()

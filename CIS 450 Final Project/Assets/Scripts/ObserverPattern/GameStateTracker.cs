@@ -17,6 +17,8 @@ public class GameStateTracker : ISubject
     [SerializeField] float treeWeight;
     [SerializeField] float co2Weight;
 
+    public bool isRunning = true;
+
     private void Awake()
     {
         currentTemp = maxTemp / 2;
@@ -45,16 +47,19 @@ public class GameStateTracker : ISubject
 
     private void Update()
     {
-        float netDifference = (co2Count * co2Weight) - (treeCount * treeWeight);
-
-        currentTemp += netDifference * tempChangeRate * Time.deltaTime;
-
-        if (currentTemp < 0)
+        if (isRunning)
         {
-            currentTemp = 0;
-        }
+            float netDifference = (co2Count * co2Weight) - (treeCount * treeWeight);
 
-        NotifyObservers();
+            currentTemp += netDifference * tempChangeRate * Time.deltaTime;
+
+            if (currentTemp < 0)
+            {
+                currentTemp = 0;
+            }
+
+            NotifyObservers();
+        }
     }
 
     public void UpdateTreeCount(int amount)

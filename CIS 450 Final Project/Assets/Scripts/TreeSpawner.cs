@@ -11,6 +11,7 @@ public class TreeSpawner : MonoBehaviour
     [SerializeField] Vector2 yPosBounds;
     [SerializeField] ResourceTracker resourceTracker;
 
+    bool canBeInteractable;
     bool hasClickedOnce = false;
     int currentIndex = -1;
 
@@ -39,16 +40,29 @@ public class TreeSpawner : MonoBehaviour
 
     public void UpdateButtonAvailability(int currentResources)
     {
-        for (int i = 0; i < buttonList.Count && i < treePrefabs.Count; ++i)
+        if (canBeInteractable)
         {
-            if (treePrefabs[i].GetComponent<TreeTemplate>().GetCost() > currentResources)
+            for (int i = 0; i < buttonList.Count && i < treePrefabs.Count; ++i)
             {
-                buttonList[i].interactable = false;
+                if (treePrefabs[i].GetComponent<TreeTemplate>().GetCost() > currentResources)
+                {
+                    buttonList[i].interactable = false;
+                }
+                else
+                {
+                    buttonList[i].interactable = true;
+                }
             }
-            else
-            {
-                buttonList[i].interactable = true;
-            }
+        }
+    }
+
+    public void ToggleButtons(bool isActive)
+    {
+        foreach (Button treeButton in buttonList)
+        {
+            canBeInteractable = isActive;
+            treeButton.interactable = isActive;
+            UpdateButtonAvailability(resourceTracker.GetResources());
         }
     }
 }
