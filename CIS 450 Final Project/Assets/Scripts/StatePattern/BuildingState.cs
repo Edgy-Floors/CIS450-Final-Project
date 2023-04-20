@@ -13,11 +13,17 @@ public class BuildingState : State
 
     public void BeginState()
     {
-        throw new System.NotImplementedException();
+        //Time.timeScale = 0;
+        context.gameStateTracker.isRunning = false;
+        context.co2Spawner.StopSpawning();
+
+        context.treeSpawner.ToggleButtons(true);
+        context.continueButton.SetActive(true);
     }
 
     public void EndState()
     {
-        throw new System.NotImplementedException();
+        context.currentState = StateChanger.battleState;
+        context.BeginState();
     }
 }

@@ -10,12 +10,15 @@ public class DefaultEmission : MonoBehaviour, Emission
     [Tooltip("Reference to the gameStateTracker")]
     public GameStateTracker gst;
 
+    ObjectPooler objectPooler;
+
     public Transform[] waypoints;
     private int currentWaypointIndex = 0;
 
     private void Start()
     {
         waypoints = WaypointManager.Instance.waypoints;
+        objectPooler = ObjectPooler.uniqueInstance;
     }
 
     private void Awake()
@@ -41,15 +44,20 @@ public class DefaultEmission : MonoBehaviour, Emission
         {
             move();
         }
+        else
+        {
+            gst.UpdateCo2Count(-1);
+            objectPooler.ReturnObjectToPool("Enemy", gameObject);
+        }
     }
 
     private void OnEnable()
     {
-        gst.UpdateCo2Count(1);
+        //gst.UpdateCo2Count(1);
     }
 
     private void OnDisable()
     {
-        gst.UpdateCo2Count(-1);
+        //gst.UpdateCo2Count(-1);
     }
 }

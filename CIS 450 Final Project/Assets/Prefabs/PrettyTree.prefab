@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5088823790026949117}
   - component: {fileID: 5088823790026949118}
-  - component: {fileID: 5088823790026949119}
   - component: {fileID: 5088823790026949112}
   - component: {fileID: 5068540896024208553}
+  - component: {fileID: 3031328267626135431}
   m_Layer: 0
   m_Name: PrettyTree
   m_TagString: Untagged
@@ -87,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5088823790026949119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5088823790026949113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8497687eec3d44548b8bd443d997fc6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 2
-  absorbtionRange: 6
-  absorbtionSpeed: 5
-  resourceGain: 5
 --- !u!58 &5088823790026949112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,3 +124,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3031328267626135431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5088823790026949113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2db7ca751c63e429a615545a2c1578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 4
+  absorbtionRange: 6
+  absorbtionSpeed: 8
+  resourceGain: 3
+  validTargets: []

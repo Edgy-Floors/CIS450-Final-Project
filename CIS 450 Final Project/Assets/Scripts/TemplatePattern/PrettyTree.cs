@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleTargetTree : TreeTemplate
+public class PrettyTree : TreeTemplate
 {
-    [SerializeField]List<GameObject> validTargets = new List<GameObject>();
+    [SerializeField] List<GameObject> validTargets = new List<GameObject>();
     CircleCollider2D attackRange;
     ObjectPooler objectPooler;
 
@@ -26,7 +26,6 @@ public class SingleTargetTree : TreeTemplate
     protected override void AbsorbCo2()
     {
         GameObject tempCo2 = validTargets[0];
-        //gameStateTracker.UpdateCo2Count(-1);
         objectPooler.ReturnObjectToPool("Enemy", tempCo2);
     }
 

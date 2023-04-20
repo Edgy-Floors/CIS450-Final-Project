@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleState : State
 {
     StateChanger context;
+    IEnumerator battleCoroutine;
 
     public BattleState(StateChanger newContext)
     {
@@ -13,11 +14,22 @@ public class BattleState : State
 
     public void BeginState()
     {
-        throw new System.NotImplementedException();
+        //Time.timeScale = 1;
+        context.gameStateTracker.isRunning = true;
+        context.co2Spawner.StartSpawning();
+
+        context.treeSpawner.ToggleButtons(false);
+        context.continueButton.SetActive(false);
+
+        battleCoroutine = context.EndBattle();
+        context.StartCoroutine(battleCoroutine);
     }
 
     public void EndState()
     {
-        throw new System.NotImplementedException();
+        context.StopCoroutine(battleCoroutine);
+
+        context.currentState = StateChanger.buildingState;
+        context.BeginState();
     }
 }
