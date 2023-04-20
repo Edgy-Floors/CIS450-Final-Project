@@ -10,6 +10,7 @@ public class TreeSpawner : MonoBehaviour
     [SerializeField] Vector2 xPosBounds;
     [SerializeField] Vector2 yPosBounds;
     [SerializeField] ResourceTracker resourceTracker;
+    [SerializeField] TreeInfo treeInfo;
 
     bool canBeInteractable;
     bool hasClickedOnce = false;
@@ -19,12 +20,16 @@ public class TreeSpawner : MonoBehaviour
     {
         hasClickedOnce = true;
         currentIndex = optionClicked;
+        treeInfo.EnableDescription(buttonList[optionClicked].gameObject.transform.position.y, 
+            treePrefabs[optionClicked].GetComponent<TreeTemplate>());
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && hasClickedOnce)
         {
+            treeInfo.DisableDescription();
+
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if ((mousePos.x >= xPosBounds.x && mousePos.x <= xPosBounds.y) && 

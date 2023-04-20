@@ -8,6 +8,7 @@ public abstract class TreeTemplate : MonoBehaviour
     [SerializeField] protected float absorbtionRange;
     [SerializeField] protected float absorbtionSpeed;
     [SerializeField] protected int resourceGain;
+    [SerializeField] public string description;
 
     protected GameStateTracker gameStateTracker;
     protected ResourceTracker resourceTracker;
