@@ -11,7 +11,7 @@ public abstract class TreeTemplate : MonoBehaviour
     [SerializeField] public string description;
 
     protected GameStateTracker gameStateTracker;
-    protected ResourceTracker resourceTracker;
+    protected GameFacade gameFacade;
 
     protected IEnumerator Absorb()
     {
@@ -19,7 +19,7 @@ public abstract class TreeTemplate : MonoBehaviour
         {
             if (CheckForCo2())
             {
-                resourceTracker.GainResources(resourceGain);
+                gameFacade.GainResources(resourceGain);
                 AbsorbCo2();
             }
 

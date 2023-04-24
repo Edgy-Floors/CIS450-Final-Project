@@ -4,12 +4,14 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Exposition Scene");
+        TextDisplay.sceneToLoad = "Level 1";
     }
 
     public void LoadSecondLevel()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("Exposition Scene");
+        TextDisplay.sceneToLoad = "Level 2";
     }
 
     public void QuitGame()
