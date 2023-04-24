@@ -81,5 +81,4 @@ public class GameStateTracker : ISubject
             co2Count = 0;
         }
     }
-
 }
