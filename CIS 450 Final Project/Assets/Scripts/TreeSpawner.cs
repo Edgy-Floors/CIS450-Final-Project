@@ -20,6 +20,9 @@ public class TreeSpawner : MonoBehaviour
     {
         hasClickedOnce = true;
         currentIndex = optionClicked;
+
+        treeInfo.EnableDescription(buttonList[optionClicked].transform.position.y,
+            treePrefabs[optionClicked].GetComponent<TreeTemplate>());
     }
 
     private void Update()
