@@ -18,7 +18,7 @@ public class BurstTree : TreeTemplate
         gameStateTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameStateTracker>();
         gameStateTracker.UpdateTreeCount(1);
 
-        resourceTracker = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceTracker>();
+        gameFacade = GameObject.Find("GameFacade").GetComponent<GameFacade>();
 
         StartCoroutine(Absorb());
     }

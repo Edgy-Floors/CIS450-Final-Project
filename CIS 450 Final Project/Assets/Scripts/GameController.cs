@@ -8,10 +8,12 @@ public class GameController : MonoBehaviour
 
     public PauseMenu pauseMenuScript;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        // Finds the pause menu gameobject gets the object and its respective script.
+        pauseMenuCanvas = GameObject.FindGameObjectWithTag("Pause Menu");
+        pauseMenuScript = pauseMenuCanvas.GetComponent<PauseMenu>();
+        pauseMenuCanvas.SetActive(false);
     }
 
     // Update is called once per frame

@@ -7,11 +7,13 @@ public class WinLossButtons : MonoBehaviour
 {
     public void RetryButtonClicked()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenuClicked()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
     }
 }
