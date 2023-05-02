@@ -14,7 +14,7 @@ public class TreeInfo : MonoBehaviour
 
         treeDescription.transform.position = new Vector2(treeDescription.transform.position.x, yPos);
 
-        descriptionText.text = "Cost: " + tree.GetCost() + "\n" + tree.description;
+        descriptionText.text = "Help Needed: " + tree.GetCost() + "\n" + tree.description;
     }
 
     public void DisableDescription()

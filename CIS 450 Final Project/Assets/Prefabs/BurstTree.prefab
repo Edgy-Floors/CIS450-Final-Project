@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   absorbtionRange: 2
-  absorbtionSpeed: 2
+  absorbtionSpeed: 3
   resourceGain: 2
   description: Short range tree that can absorb up to three emissions at once.
 --- !u!58 &6829626524243146599
