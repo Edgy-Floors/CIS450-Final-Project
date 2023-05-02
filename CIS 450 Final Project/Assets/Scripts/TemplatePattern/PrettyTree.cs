@@ -26,6 +26,7 @@ public class PrettyTree : TreeTemplate
     protected override void AbsorbCo2()
     {
         GameObject tempCo2 = validTargets[0];
+        gameStateTracker.UpdateCo2Count(-1);
         objectPooler.ReturnObjectToPool("Enemy", tempCo2);
     }
 

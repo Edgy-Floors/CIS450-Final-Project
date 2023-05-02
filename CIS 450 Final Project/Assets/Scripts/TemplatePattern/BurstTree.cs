@@ -32,7 +32,7 @@ public class BurstTree : TreeTemplate
             if (validTargets.Count != 0)
             {
                 tempCo2 = validTargets[0];
-                //gameStateTracker.UpdateCo2Count(-1);
+                gameStateTracker.UpdateCo2Count(-1);
                 objectPooler.ReturnObjectToPool("Enemy", tempCo2);
             }
         }

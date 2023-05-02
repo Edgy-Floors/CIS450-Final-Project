@@ -7,6 +7,8 @@ public class CO2Spawner : MonoBehaviour
     ObjectPooler objectPooler;
     [SerializeField] GameStateTracker gameStateTracker;
     [SerializeField] float spawnTimer;
+    [SerializeField] float timerReduction;
+    [SerializeField] float minTimer;
     [SerializeField] Vector2 spawnPos;
 
     private void Start()
@@ -24,6 +26,11 @@ public class CO2Spawner : MonoBehaviour
     public void StopSpawning()
     {
         StopAllCoroutines();
+
+        if (spawnTimer > minTimer)
+        {
+            spawnTimer -= timerReduction;
+        }
     }
 
     IEnumerator SpawnCO2()

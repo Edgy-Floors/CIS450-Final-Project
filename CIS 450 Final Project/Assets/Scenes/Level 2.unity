@@ -1945,8 +1945,8 @@ MonoBehaviour:
   treeCount: 0
   co2Count: 0
   tempChangeRate: 0.5
-  treeWeight: 1
-  co2Weight: 0.2
+  treeWeight: 0.6
+  co2Weight: 0.75
   isRunning: 1
 --- !u!114 &939819435
 MonoBehaviour:
@@ -12119,7 +12119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateTracker: {fileID: 939819434}
-  spawnTimer: 1.5
+  spawnTimer: 1.6
+  timerReduction: 0.4
+  minTimer: 0.79
   spawnPos: {x: 0, y: 0}
 --- !u!114 &1695936193
 MonoBehaviour:
