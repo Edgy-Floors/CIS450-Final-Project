@@ -10,6 +10,7 @@ public class GameEndMessage : IObserver
     private void Awake()
     {
         GameObject.FindGameObjectWithTag("GameController").GetComponent<ISubject>().RegisterObserver(this);
+        Time.timeScale = 1;
     }
 
     public override void UpdateData(float currentTemp, float maxTemp, int treeCount, int co2Count)
@@ -19,14 +20,12 @@ public class GameEndMessage : IObserver
             Time.timeScale = 0;
 
             gameLossUI.SetActive(true);
-            Time.timeScale = 1;
         }
         else if (currentTemp == 0)
         {
             Time.timeScale = 0;
 
             gameWinUI.SetActive(true);
-            Time.timeScale = 1;
         }
     }
 }
