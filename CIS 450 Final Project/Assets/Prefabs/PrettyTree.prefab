@@ -102,7 +102,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 4
 --- !u!50 &5068540896024208553
 Rigidbody2D:
   serializedVersion: 4
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 4
-  absorbtionRange: 5
+  absorbtionRange: 4
   absorbtionSpeed: 8
   resourceGain: 3
   description: Long range, but slow to aborb. Produces many volunteers.

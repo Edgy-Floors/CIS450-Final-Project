@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 8
-  absorbtionRange: 4
+  absorbtionRange: 3
   absorbtionSpeed: 4
   resourceGain: 1
   description: Has average range and absorbtion speed.

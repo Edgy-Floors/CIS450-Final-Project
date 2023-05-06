@@ -11,6 +11,7 @@ public class TreeSpawner : MonoBehaviour
     [SerializeField] Vector2 yPosBounds;
     [SerializeField] ResourceTracker resourceTracker;
     [SerializeField] TreeInfo treeInfo;
+    [SerializeField] RangeIndicator rangeIndicator;
 
     bool canBeInteractable;
     bool hasClickedOnce = false;
@@ -23,12 +24,25 @@ public class TreeSpawner : MonoBehaviour
 
         treeInfo.EnableDescription(buttonList[optionClicked].transform.position.y,
             treePrefabs[optionClicked].GetComponent<TreeTemplate>());
+
+        if (currentIndex == 3)
+        {
+            MortarTree mortarTemplate = treePrefabs[currentIndex].GetComponent<MortarTree>();
+            rangeIndicator.ActivateIndicator(mortarTemplate.absorbtionRange, mortarTemplate.minAbsorbtionRange);
+        }
+        else
+        {
+            TreeTemplate template = treePrefabs[currentIndex].GetComponent<TreeTemplate>();
+            rangeIndicator.ActivateIndicator(template.absorbtionRange);
+        }
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && hasClickedOnce)
         {
+            rangeIndicator.DeactivateIndicator();
+
             treeInfo.DisableDescription();
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

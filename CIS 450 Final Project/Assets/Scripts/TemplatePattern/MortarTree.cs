@@ -5,7 +5,7 @@ using UnityEngine;
 public class MortarTree : TreeTemplate
 {
     [SerializeField] List<GameObject> validTargets = new List<GameObject>();
-    [SerializeField] float minAbsorbtionRange;
+    public float minAbsorbtionRange;
     CircleCollider2D attackRange;
     ObjectPooler objectPooler;
 
