@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StateChanger : MonoBehaviour
 {
+    public bool isInTutorial;
+    public Tutorial tutorialScript;
     public static State buildingState;
     public static State battleState;
     public State currentState;
@@ -14,8 +16,14 @@ public class StateChanger : MonoBehaviour
     public GameObject continueButton;
     [SerializeField] float battleLength;
 
+
     private void Awake()
     {
+        if(isInTutorial)
+        {
+            tutorialScript = GameObject.FindGameObjectWithTag("TutorialText").GetComponent<Tutorial>();
+        }
+
         GameObject temp = GameObject.FindGameObjectWithTag("GameController");
         treeSpawner = temp.GetComponent<TreeSpawner>();
         gameStateTracker = temp.GetComponent<GameStateTracker>();
@@ -35,6 +43,11 @@ public class StateChanger : MonoBehaviour
     public void EndState()
     {
         currentState.EndState();
+
+        if(isInTutorial)
+        {
+            tutorialScript.UpdateText(3);
+        }
     }
 
     public IEnumerator EndBattle()
