@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbsorptionIncreaser : MonoBehaviour
+public class AbsorptionIncreaser : TreeModifier
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override bool CheckForCo2()
     {
-        
+        return this.CheckForCo2();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void AbsorbCo2()
     {
-        
+        this.AbsorbCo2();
     }
 }

@@ -38,6 +38,7 @@ public class StateChanger : MonoBehaviour
 
     public void BeginState()
     {
+        wave++;
         currentState.BeginState();
     }
 
@@ -54,7 +55,6 @@ public class StateChanger : MonoBehaviour
     public IEnumerator EndBattle()
     {
         yield return new WaitForSeconds(battleLength);
-        wave++;
         EndState();
     }
 }

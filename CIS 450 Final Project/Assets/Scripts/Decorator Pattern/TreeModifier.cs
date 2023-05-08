@@ -6,9 +6,9 @@ public abstract class TreeModifier : TreeTemplate
 {
     protected TreeTemplate t;
 
-    public TreeModifier(TreeTemplate baseTree)
+    public TreeModifier()
     {
-        t = baseTree;
+        t = this;
     }
 
     public void addRange(float rangeToAdd)
