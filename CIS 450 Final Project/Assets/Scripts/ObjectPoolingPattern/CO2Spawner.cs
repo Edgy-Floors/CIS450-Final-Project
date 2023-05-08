@@ -10,11 +10,12 @@ public class CO2Spawner : MonoBehaviour
     [SerializeField] float timerReduction;
     [SerializeField] float minTimer;
     [SerializeField] Vector2 spawnPos;
+    public StateChanger sc;
 
     private void Start()
     {
         objectPooler = ObjectPooler.uniqueInstance;
-
+        sc = GameObject.FindGameObjectWithTag("GameController").GetComponent<StateChanger>();
         //StartSpawning();
     }
 
@@ -37,6 +38,13 @@ public class CO2Spawner : MonoBehaviour
     {
         while (true)
         {
+            if(sc.wave > 4)
+            {
+                yield return new WaitForSeconds(spawnTimer / 2);
+                objectPooler.SpawnFromPool("BigEnemy", spawnPos, Quaternion.identity);
+                gameStateTracker.UpdateCo2Count(2);
+            }
+
             objectPooler.SpawnFromPool("Enemy", spawnPos, Quaternion.identity);
 
             gameStateTracker.UpdateCo2Count(1);

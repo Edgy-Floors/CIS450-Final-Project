@@ -42,8 +42,16 @@ public class MortarTree : TreeTemplate
 
         if (tempCo2 != null)
         {
-            gameStateTracker.UpdateCo2Count(-1);
-            objectPooler.ReturnObjectToPool("Enemy", tempCo2);
+            if (tempCo2.gameObject.name.Contains("BigEnemy"))
+            {
+                gameStateTracker.UpdateCo2Count(-2);
+                objectPooler.ReturnObjectToPool("BigEnemy", tempCo2);
+            }
+            else
+            {
+                gameStateTracker.UpdateCo2Count(-1);
+                objectPooler.ReturnObjectToPool("Enemy", tempCo2);
+            }
         }
     }
 

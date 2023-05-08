@@ -31,6 +31,11 @@ public abstract class TreeTemplate : MonoBehaviour
 
     protected abstract void AbsorbCo2();
 
+    private void Update()
+    {
+        
+    }
+
     public int GetCost()
     {
         return cost;

@@ -6,7 +6,6 @@ public class WaypointManager : MonoBehaviour
 {
     public static WaypointManager Instance;
     public Transform[] waypoints;
-    public Transform[] bigWaypoints;
 
     private void Awake()
     {

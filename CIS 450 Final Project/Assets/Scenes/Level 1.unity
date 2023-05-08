@@ -1799,6 +1799,7 @@ MonoBehaviour:
   timerReduction: 0.3
   minTimer: 0.89
   spawnPos: {x: 0.69, y: 5.79}
+  sc: {fileID: 0}
 --- !u!114 &847305190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1815,6 +1816,9 @@ MonoBehaviour:
   - poolTag: Enemy
     prefab: {fileID: 3308445694187831530, guid: 0f84419b5cbf78147a99d24b541c63d5, type: 3}
     poolSize: 50
+  - poolTag: BigEnemy
+    prefab: {fileID: 8490997595634544918, guid: 4118a27ee1dd6b041809758fd7567207, type: 3}
+    poolSize: 10
 --- !u!4 &847305191
 Transform:
   m_ObjectHideFlags: 0
@@ -3118,6 +3122,7 @@ MonoBehaviour:
   - {fileID: 1230845502}
   - {fileID: 1391852993}
   - {fileID: 1181133015}
+  bigWaypoints: []
 --- !u!1 &1391852992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,6 +3275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d73e5f5a5fe27e4db271d269ee9b7ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInTutorial: 0
+  tutorialScript: {fileID: 0}
+  wave: 0
   treeSpawner: {fileID: 0}
   gameStateTracker: {fileID: 0}
   co2Spawner: {fileID: 847305189}
