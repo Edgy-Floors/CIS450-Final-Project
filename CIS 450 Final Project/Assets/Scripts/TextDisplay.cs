@@ -11,6 +11,8 @@ public class TextDisplay : MonoBehaviour
     public float scrollSpeed = 0.04f;
     public static string sceneToLoad;
 
+    public AudioSource a;
+
     private void Start()
     {
         StartCoroutine(ShowText());
@@ -31,5 +33,16 @@ public class TextDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(s);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            this.StopAllCoroutines();
+            a.mute = true;
+            this.GetComponent<TextMeshProUGUI>().text = text;
+            StartCoroutine(LoadSpecificScene(sceneToLoad));
+        }
     }
 }

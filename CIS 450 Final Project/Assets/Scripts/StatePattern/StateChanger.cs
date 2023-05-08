@@ -9,6 +9,7 @@ public class StateChanger : MonoBehaviour
     public static State buildingState;
     public static State battleState;
     public State currentState;
+    public int wave = 0;
 
     public TreeSpawner treeSpawner;
     public GameStateTracker gameStateTracker;
@@ -53,7 +54,7 @@ public class StateChanger : MonoBehaviour
     public IEnumerator EndBattle()
     {
         yield return new WaitForSeconds(battleLength);
-
+        wave++;
         EndState();
     }
 }
