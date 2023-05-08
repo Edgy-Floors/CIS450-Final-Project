@@ -37,7 +37,7 @@ public abstract class TreeTemplate : MonoBehaviour
 
     protected abstract void AbsorbCo2();
 
-    protected void Update()
+    /*protected void Update()
     {
         if (netWaves <= 2 && currentWaveCount != stateChanger.wave)
         {
@@ -49,7 +49,7 @@ public abstract class TreeTemplate : MonoBehaviour
 
             }
         }
-    }
+    }*/
 
     public int GetCost()
     {

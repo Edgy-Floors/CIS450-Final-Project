@@ -1848,10 +1848,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateTracker: {fileID: 1402733926}
-  spawnTimer: 1.5
-  timerReduction: 0.3
+  spawnTimer: 3
+  timerReduction: 0
   minTimer: 0.89
   spawnPos: {x: 0.69, y: 5.79}
+  sc: {fileID: 0}
 --- !u!114 &847305190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3461,6 +3462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTutorial: 1
   tutorialScript: {fileID: 0}
+  wave: 0
   treeSpawner: {fileID: 0}
   gameStateTracker: {fileID: 0}
   co2Spawner: {fileID: 847305189}
