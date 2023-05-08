@@ -39,16 +39,16 @@ public abstract class TreeTemplate : MonoBehaviour
 
     protected void Update()
     {
-        if (netWaves <= 2 && currentWaveCount != stateChanger.wave)
-        {
-            netWaves += stateChanger.wave - currentWaveCount;
-            currentWaveCount = stateChanger.wave;
+        //if (netWaves <= 2 && currentWaveCount != stateChanger.wave)
+        //{
+        //    netWaves += stateChanger.wave - currentWaveCount;
+        //    currentWaveCount = stateChanger.wave;
 
-            if (netWaves == 2)
-            {
+        //    if (netWaves == 2)
+        //    {
 
-            }
-        }
+        //    }
+        //}
     }
 
     public int GetCost()

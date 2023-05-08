@@ -101,5 +101,6 @@ MonoBehaviour:
   absorbtionSpeed: 4
   resourceGain: 1
   description: Has average range and absorbtion speed.
-  rangeCOllider: {fileID: 2243437915754033918}
+  stateChanger: {fileID: 0}
+  rangeCollider: {fileID: 2243437915754033918}
   validTargets: []

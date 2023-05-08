@@ -104,7 +104,8 @@ MonoBehaviour:
   absorbtionSpeed: 3
   resourceGain: 2
   description: Short range tree that can absorb up to three emissions at once.
-  rangeCOllider: {fileID: 6829626524243146599}
+  stateChanger: {fileID: 0}
+  rangeCollider: {fileID: 6829626524243146599}
 --- !u!58 &6829626524243146599
 CircleCollider2D:
   m_ObjectHideFlags: 0
