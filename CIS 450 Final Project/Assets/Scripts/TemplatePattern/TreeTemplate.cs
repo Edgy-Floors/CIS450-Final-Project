@@ -10,6 +10,12 @@ public abstract class TreeTemplate : MonoBehaviour
     [SerializeField] protected int resourceGain;
     [SerializeField] public string description;
 
+    [SerializeField] StateChanger stateChanger;
+    int netWaves = 0;
+    int currentWaveCount;
+
+    public CircleCollider2D rangeCollider;
+
     protected GameStateTracker gameStateTracker;
     protected GameFacade gameFacade;
 
@@ -31,9 +37,18 @@ public abstract class TreeTemplate : MonoBehaviour
 
     protected abstract void AbsorbCo2();
 
-    private void Update()
+    protected void Update()
     {
-        
+        if (netWaves <= 2 && currentWaveCount != stateChanger.wave)
+        {
+            netWaves += stateChanger.wave - currentWaveCount;
+            currentWaveCount = stateChanger.wave;
+
+            if (netWaves == 2)
+            {
+
+            }
+        }
     }
 
     public int GetCost()
