@@ -13,4 +13,9 @@ public class RangeIncreaser : TreeModifier
     {
         this.AbsorbCo2();
     }
+
+    private void Awake()
+    {
+        addRange(2);
+    }
 }

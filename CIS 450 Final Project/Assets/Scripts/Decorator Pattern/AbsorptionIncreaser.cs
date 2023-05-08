@@ -13,4 +13,9 @@ public class AbsorptionIncreaser : TreeModifier
     {
         this.AbsorbCo2();
     }
+
+    private void Awake()
+    {
+        addAbsorptionSpeed(2);
+    }
 }
