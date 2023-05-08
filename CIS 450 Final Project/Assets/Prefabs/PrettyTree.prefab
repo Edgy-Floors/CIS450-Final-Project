@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5088823790026949112}
   - component: {fileID: 5068540896024208553}
   - component: {fileID: 3031328267626135431}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PrettyTree
   m_TagString: Tree
   m_Icon: {fileID: 0}

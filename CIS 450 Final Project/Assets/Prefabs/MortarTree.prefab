@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 54846210527974199}
   - component: {fileID: 3073165933082214}
   - component: {fileID: 5070481503206953677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MortarTree
   m_TagString: Tree
   m_Icon: {fileID: 0}
