@@ -141,6 +141,7 @@ MonoBehaviour:
   absorbtionSpeed: 4
   resourceGain: 2
   description: Has very long range, but can't absorb CO2 at close range.
-  rangeCOllider: {fileID: 54846210527974199}
+  stateChanger: {fileID: 0}
+  rangeCollider: {fileID: 54846210527974199}
   validTargets: []
   minAbsorbtionRange: 3
