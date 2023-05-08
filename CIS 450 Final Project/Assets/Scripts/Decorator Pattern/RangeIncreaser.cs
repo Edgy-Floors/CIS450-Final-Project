@@ -16,6 +16,6 @@ public class RangeIncreaser : TreeModifier
 
     private void Awake()
     {
-        addRange(2);
+        addRange(0.5f);
     }
 }

@@ -38,7 +38,6 @@ public class StateChanger : MonoBehaviour
 
     public void BeginState()
     {
-        wave++;
         currentState.BeginState();
     }
 

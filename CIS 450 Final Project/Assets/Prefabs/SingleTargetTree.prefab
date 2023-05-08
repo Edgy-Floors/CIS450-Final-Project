@@ -74,6 +74,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6829626524243146592, guid: 0f0b991aef4c1d0449a7ffa9be3724c3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f0b991aef4c1d0449a7ffa9be3724c3, type: 3}
+--- !u!58 &2243437915754033918 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6829626524243146599, guid: 0f0b991aef4c1d0449a7ffa9be3724c3, type: 3}
+  m_PrefabInstance: {fileID: 4748482609647994265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2243437915754033919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6829626524243146598, guid: 0f0b991aef4c1d0449a7ffa9be3724c3, type: 3}
@@ -96,4 +101,5 @@ MonoBehaviour:
   absorbtionSpeed: 4
   resourceGain: 1
   description: Has average range and absorbtion speed.
+  rangeCOllider: {fileID: 2243437915754033918}
   validTargets: []

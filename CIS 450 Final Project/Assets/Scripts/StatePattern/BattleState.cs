@@ -15,6 +15,8 @@ public class BattleState : State
     public void BeginState()
     {
         //Time.timeScale = 1;
+        context.wave++;
+
         context.gameStateTracker.isRunning = true;
         context.co2Spawner.StartSpawning();
 

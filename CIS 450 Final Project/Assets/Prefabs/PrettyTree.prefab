@@ -141,4 +141,5 @@ MonoBehaviour:
   absorbtionSpeed: 8
   resourceGain: 3
   description: Long range, but slow to aborb. Produces many volunteers.
+  rangeCOllider: {fileID: 5088823790026949112}
   validTargets: []

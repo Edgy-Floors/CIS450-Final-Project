@@ -16,6 +16,6 @@ public class AbsorptionIncreaser : TreeModifier
 
     private void Awake()
     {
-        addAbsorptionSpeed(2);
+        addAbsorptionSpeed(0.25f);
     }
 }
