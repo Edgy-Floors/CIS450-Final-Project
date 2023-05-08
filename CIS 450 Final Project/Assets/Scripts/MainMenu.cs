@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
         TextDisplay.sceneToLoad = "Level 2";
     }
 
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

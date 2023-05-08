@@ -1187,7 +1187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2896938967474640857, guid: 9139793627d688540ba393d45ed988d6, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2896938967474640857, guid: 9139793627d688540ba393d45ed988d6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3122,7 +3122,6 @@ MonoBehaviour:
   - {fileID: 1230845502}
   - {fileID: 1391852993}
   - {fileID: 1181133015}
-  bigWaypoints: []
 --- !u!1 &1391852992
 GameObject:
   m_ObjectHideFlags: 0
